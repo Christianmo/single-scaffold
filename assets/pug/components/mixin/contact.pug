@@ -1,0 +1,29 @@
+mixin contact(data)
+  #contact.contact
+    .section
+      .row
+        .medium-5.medium-offset-1.columns
+          .contact__info
+            .contact__logo
+              if (template === 'elvalle')
+                img(src="/statics/images/elvalle/logo.png" alt="Mexican Place")
+              else
+                img(src="/statics/images/logo.png" alt="Mexican Place")
+
+            .hr
+
+            strong!= data.name
+            div!= data.address
+
+            .hr
+
+            p #[strong Hours:]
+            div!= data.hours
+            p #[a(href="mailto:info@mayanmexican.com") info@mayanmexican.com]
+
+            .hr
+
+            .contact__social
+              a(href="#") #[i.fa.fa-facebook]
+              a(href="#") #[i.fa.fa-instagram]
+      #map.contact__map( data-address="<strong>" + data.name + "</strong> " + data.address, data-coordinates=data.coordinates data-center=data.center)

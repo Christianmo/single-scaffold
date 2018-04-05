@@ -1,0 +1,148 @@
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.9);
+
+  @include breakpoint(medium) {
+    background-color: rgba(0, 0, 0, 1);
+  }
+
+  &__hamburger {
+    padding: 0 10px;
+    background-color: #000;
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: normal;
+    font-size: rem-calc(22px);
+
+    @include breakpoint(medium) {
+      display: none;
+    }
+  }
+
+  &__menu {
+    @include breakpoint(small only) {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;
+      background-color: rgba(0, 0, 0, 0.5);
+
+      &.active {
+        max-height: 500px;
+      }
+
+      > ul {
+        width: 100%;
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-align: center;
+
+      li {
+        margin: 0 10px;
+        display: block;
+        border-bottom: solid rgba(255, 255, 255, 0.2) 1px;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+
+        @include breakpoint(medium) {
+          display: inline-block;
+          border-bottom: 0;
+          position: relative;
+
+
+        }
+
+        &.nav__submenu {
+          i {
+            display: none;
+          }
+
+          ul {
+            li {
+              margin: 0 0 10px;
+              display: inline-block;
+              border: 0;
+
+              a {
+                padding: 10px;
+
+              }
+
+            }
+          }
+
+          @include breakpoint(medium) {
+            position: relative;
+
+            i {
+              display: inline-block;
+            }
+
+            &:hover {
+              ul {
+                display: block;
+              }
+            }
+
+            ul {
+              background-color: rgba(0, 0, 0, 0.85);
+              position: absolute;
+              left: 0;
+              display: none;
+
+              li {
+                margin: 0;
+                display: block;
+
+                a {
+                  padding: 18px 20px;
+                  text-align: left;
+                  white-space: nowrap;
+                  color: #999;
+
+                  &:hover {
+                    background-color: #333;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        a {
+          display: block;
+          padding: 18px 20px;
+          color: rgba(255, 255, 255, 0.8);
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: rem-calc(12px);
+          font-weight: bold;
+          line-height: 1;
+          transition: all 0.2s ease-in-out;
+
+          @include breakpoint(medium) {
+            color: rgba(255, 255, 255, 0.4);
+          }
+
+          &:hover {
+            background-color: #222;
+            color: rgba(255, 255, 255, 1);
+          }
+        }
+      }
+    }
+  }
+}

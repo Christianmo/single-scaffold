@@ -1,0 +1,12 @@
+@import 'node_modules/foundation-sites/scss/util/_util';
+
+$yellow: #e9b528;
+$mustard: #d8802e;
+$red: #c3181b;
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}

@@ -1,0 +1,28 @@
+{
+  "name": "scaffold",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-sass": "node-sass -w assets/scss/ -o statics/css/",
+    "build-js": "webpack --watch",
+    "compile": "babel --presets=env assets/js/script.js --out-file statics/js/script.js",
+    "build-templates": "pug --watch ./assets/pug/pages -P -o ./",
+    "build": "npm run build-templates & npm run build-js & npm run build-sass",
+    "dev": "browser-sync start --server --files 'assets/scss/*' '*/*.html' '*/*/*.html' '*/*/*/*.html' '*.html' 'statics/js/*.js'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "foundation-sites": "^6.4.4-rc1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "node-sass": "^4.8.3",
+    "pug": "^2.0.3",
+    "webpack": "^4.5.0"
+  }
+}
