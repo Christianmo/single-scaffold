@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-sass": "node-sass -w assets/scss/ -o statics/css/",
-    "build-js": "webpack --watch",
+    "build-js": "webpack --mode production --module-bind js=babel-loader",
     "compile": "babel --presets=env assets/js/script.js --out-file statics/js/script.js",
     "build-templates": "pug --watch ./assets/pug/pages -P -o ./",
     "build": "npm run build-templates & npm run build-js & npm run build-sass",
@@ -20,9 +20,11 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "node-sass": "^4.8.3",
     "pug": "^2.0.3",
-    "webpack": "^4.5.0"
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
   }
 }

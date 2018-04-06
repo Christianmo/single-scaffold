@@ -5,6 +5,17 @@ module.exports = {
         path: __dirname + "/statics/js",
         filename: 'script.js'
     },
+    module: {
+        rules: [
+            {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: {
+                loader: "babel-loader"
+            }
+            }
+        ]
+    },
     devServer : {
         host: '0.0.0.0',
         port: '3000',
