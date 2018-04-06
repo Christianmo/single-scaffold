@@ -1,5 +1,5 @@
 const nav = () => {
-  console.log('ES6');
+  console.log('ES6!!!!!!!');
 }
 
 export default nav;

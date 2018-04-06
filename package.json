@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-sass": "node-sass -w assets/scss/ -o statics/css/",
-    "build-js": "webpack --mode production --module-bind js=babel-loader",
+    "build-js": "webpack --watch --mode production --module-bind js=babel-loader",
     "compile": "babel --presets=env assets/js/script.js --out-file statics/js/script.js",
     "build-templates": "pug --watch ./assets/pug/pages -P -o ./",
     "build": "npm run build-templates & npm run build-js & npm run build-sass",
