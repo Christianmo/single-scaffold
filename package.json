@@ -5,25 +5,32 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-sass": "node-sass -w assets/scss/ -o statics/css/",
+    "build-sass": "node-sass -w assets/scss/ -o statics/css/ --output-style compressed",
     "build-js": "webpack --watch --mode production --module-bind js=babel-loader",
-    "compile": "babel --presets=env assets/js/script.js --out-file statics/js/script.js",
     "build-templates": "pug --watch ./assets/pug/pages -P -o ./",
     "build": "npm run build-templates & npm run build-js & npm run build-sass",
-    "dev": "browser-sync start --server --files 'assets/scss/*' '*/*.html' '*/*/*.html' '*/*/*/*.html' '*.html' 'statics/js/*.js'"
+    "dev": "browser-sync start --server --files '*.html' 'statics/css/*.css' 'statics/js/*.js'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "foundation-sites": "^6.4.4-rc1"
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "form-serialize": "^0.7.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.6",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.10.0",
+    "mq-sass": "^0.8.0",
     "node-sass": "^4.8.3",
     "pug": "^2.0.3",
+    "pug-cli": "^1.0.0-alpha6",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14"
   }
