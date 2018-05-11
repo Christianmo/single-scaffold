@@ -1,10 +1,11 @@
 module.exports = {
-  context: `${__dirname  }/assets/js`,
+  context: `${__dirname}/assets/js`,
   entry: ['babel-polyfill', './script.js'],
   output: {
-    path: `${__dirname  }/statics/js`,
+    path: `${__dirname}/public/statics/js`,
     filename: 'script.js',
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -17,9 +18,4 @@ module.exports = {
     ],
   },
   mode: 'development',
-  devServer: {
-    host: '0.0.0.0',
-    port: '3000',
-    inline: true,
-  },
 };
