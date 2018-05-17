@@ -1,3 +1,4 @@
 node_modules
 statics
 yarn.lock
+yarn-error.log
