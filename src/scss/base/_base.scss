@@ -1,0 +1,9 @@
+@import 'node_modules/normalize.css/normalize';
+@import 'node_modules/mq-sass/stylesheets/_mq-sass.scss';
+@import 'settings';
+@import 'global';
+@import 'fonts';
+
+img {
+  max-width: 100%;
+}

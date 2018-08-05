@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-sass": "node-sass -w assets/scss/ -o public/statics/css/ --output-style compressed",
+    "build-sass": "node-sass -w src/scss/ -o public/statics/css/ --output-style compressed",
     "build-js": "webpack --watch --mode production --module-bind js=babel-loader",
-    "build-templates": "pug --watch ./assets/pug/pages -P -o ./public",
+    "build-templates": "pug --watch ./src/pug/pages -P -o ./public",
     "build": "npm run build-templates & npm run build-js & npm run build-sass",
     "dev": "browser-sync start --server='public' --files '*.html' 'public/statics/css/*.css' 'public/statics/js/*.js'"
   },
@@ -17,7 +17,9 @@
   "dependencies": {
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
-    "form-serialize": "^0.7.2"
+    "form-serialize": "^0.7.2",
+    "normalize.css": "^8.0.0",
+    "sass-mq": "^5.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

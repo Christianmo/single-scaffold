@@ -1,5 +1,5 @@
 module.exports = {
-  context: `${__dirname}/assets/js`,
+  context: `${__dirname}/src/js`,
   entry: ['babel-polyfill', './script.js'],
   output: {
     path: `${__dirname}/public/statics/js`,

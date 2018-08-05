@@ -1,0 +1,27 @@
+block variables
+doctype html
+html
+  head
+    title= metas.title
+    meta(charset="UTF-8")
+    meta( name="viewport", content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+
+    meta(name='language', content='English' )
+    meta(name='description', content=metas.description )
+    meta(property='og:image', content=metas.image )
+    meta(property='og:title', content=metas.title )
+    meta(property='og:url', content=metas.url )
+    meta(property='og:site_name', content=metas.name)
+
+    link(rel='stylesheet', type='text/css', href='/statics/css/style.css')
+    link(rel='shortcut icon', href='/statics/images/favicon.ico')
+
+  body(class=bodyClass)
+
+    include ../components/nav.pug
+
+    block content
+
+    include ../components/footer.pug
+
+    script(src='/statics/js/script.js')
