@@ -1,5 +1,5 @@
 /* Colors */
-$black: #0000;
+$black: #000000;
 $white: #ffffff;
 $grey: #666666;
 
@@ -21,15 +21,27 @@ $semi-bold: 600;
 $bold: 700;
 $ultra-bold: 800;
 
-/*breakpointes*/
-$mq-breakpoints: (
-    mobile:  320px,
-    tablet:  740px,
-    desktop: 980px,
-    wide:    1300px,
+/*mixins*/
+$breakpoints: (
+  mobile:  320px,
+  tablet:  640px,
+  ipad    : 768px,
+  desktop: 1024,
+  wide:    1300px,
 );
 
-/*mixins*/
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
 @mixin placeholder {
   ::-webkit-input-placeholder {@content}
   :-moz-placeholder           {@content}
