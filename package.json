@@ -9,7 +9,7 @@
     "build-js": "webpack --watch --mode production --module-bind js=babel-loader",
     "build-templates": "pug --watch ./src/pug/pages -P -o ./public",
     "build": "npm run build-templates & npm run build-js & npm run build-sass",
-    "start": "browser-sync start --server='public' --files '*.html' 'public/statics/css/*.css' 'public/statics/js/*.js'"
+    "start": "browser-sync start --server='public' --files 'public/*.html' 'public/statics/css/*.css' 'public/statics/js/*.js'"
   },
   "keywords": [],
   "author": "",
@@ -24,7 +24,7 @@
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
-    "browser-sync": "^2.23.6",
+    "browser-sync": "^2.26.3",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.10.0",
