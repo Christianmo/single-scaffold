@@ -1,13 +1,13 @@
+img {
+  max-width: 100%;
+}
+
 .container {
   margin: auto;
-  max-width: 1200px;
+  max-width: 1024px;
   padding: 0 20px;
   
   @include mq(desktop) {
     padding: 0 30px;
   }
-}
-
-.content {
-  margin-bottom: 30px;
 }

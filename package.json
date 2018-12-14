@@ -9,7 +9,7 @@
     "build-js": "webpack --watch --mode production --module-bind js=babel-loader",
     "build-templates": "pug --watch ./src/pug/pages -P -o ./public",
     "build": "npm run build-templates & npm run build-js & npm run build-sass",
-    "dev": "browser-sync start --server='public' --files '*.html' 'public/statics/css/*.css' 'public/statics/js/*.js'"
+    "start": "browser-sync start --server='public' --files '*.html' 'public/statics/css/*.css' 'public/statics/js/*.js'"
   },
   "keywords": [],
   "author": "",
@@ -33,6 +33,6 @@
     "pug": "^2.0.3",
     "pug-cli": "^1.0.0-alpha6",
     "webpack": "^4.5.0",
-    "webpack-cli": "^2.0.14"
+    "webpack-cli": "^3.1.2"
   }
 }
